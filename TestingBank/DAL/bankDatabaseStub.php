@@ -1,4 +1,5 @@
 <?php
+/*HERRO*/
     include_once '../Model/domeneModell.php';
     class BankDBStub
     {
