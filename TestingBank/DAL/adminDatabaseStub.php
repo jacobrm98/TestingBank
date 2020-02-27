@@ -27,6 +27,7 @@ class adminDBStub
            $alleKunder[]=$kunde3;
            return $alleKunder;
         }
+
      function endreKundeInfo($kunde)
     {
           $kunde1=new kunde();

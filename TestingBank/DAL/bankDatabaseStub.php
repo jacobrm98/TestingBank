@@ -120,8 +120,6 @@
       /*function hentKonti($personnummer)
       {
         $allKonti=array();
-       * hei hei 
-       * heihei 
                 $konti1 = new konto();
                 $konti2 = new konto();
                 $konti1->personnummer=01010110523;
