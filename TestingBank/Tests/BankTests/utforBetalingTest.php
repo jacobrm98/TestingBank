@@ -3,6 +3,7 @@ include_once '../../Model/domeneModell.php';
 include_once '../../DAL/bankDatabaseStub.php';
 include_once '../../BLL/bankLogikk.php';
 
+
 class utforBetalingTest extends PHPUnit\Framework\TestCase {
     public function test_utforBetaling()
     {
