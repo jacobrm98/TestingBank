@@ -109,14 +109,14 @@
           $allKonti=array();
 
           $konti1=new konto();
-          $konti1->personnummer=$personnummer;
+          $konti1->personnummer="01010122344";
           $konti1->kontonummer="98765432123";
           $konti1->saldo=2000;
           $konti1->type="Brukskonto";
           $konti1->valuta="NOK";
           
           $konti2=new konto();
-          $konti2->personnummer=$personnummer;
+          $konti2->personnummer=$konti1->$personnummer;
           $konti2->kontonummer="23456543456";
           $konti2->saldo=7000;
           $konti2->type="Sparekonto";
@@ -125,7 +125,7 @@
           if($personnummer==$konti1->personnummer)
           {
               $allKonti[]=$konti1->kontonummer;
-              $allKonti[]=$konti1->kontonummer;
+              $allKonti[]=$konti2->kontonummer;
               return $allKonti;
           }
           return $allKonti;
