@@ -115,6 +115,7 @@
           $konti1->type="Brukskonto";
           $konti1->valuta="NOK";
           
+          $konti2=new konto();
           $konti2->personnummer=$personnummer;
           $konti2->kontonummer="23456543456";
           $konti2->saldo=7000;
