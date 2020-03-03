@@ -126,6 +126,7 @@
       /*function hentSaldi($personnummer)
       {
           $allKonti=array();
+       * //Heihei
 
           $konti1=new konto();
           $konti1->personnummer=$personnummer;
