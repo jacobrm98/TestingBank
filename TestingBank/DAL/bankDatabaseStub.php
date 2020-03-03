@@ -1,5 +1,6 @@
 <?php
     include_once '../Model/domeneModell.php';
+
     class BankDBStub
     {
         function hentEnKunde($personnummer)
@@ -116,7 +117,7 @@
           $konti1->valuta="NOK";
           
           $konti2=new konto();
-          $konti2->personnummer=$konti1->$personnummer;
+          $konti2->personnummer="01010122344";
           $konti2->kontonummer="23456543456";
           $konti2->saldo=7000;
           $konti2->type="Sparekonto";
@@ -142,15 +143,15 @@
           $konti1->valuta="NOK";
           
           $konti2=new konto();
-          $konti2->personnummer=$konti1->$personnummer;
+          $konti2->personnummer="01010122344";
           $konti2->kontonummer="23456543456";
           $konti2->saldo=7000;
           $konti2->type="Sparekonto";
           $konti2->valuta="NOK";
           
-          if($kont1->personnummer==$personnummer)
+          if($konti1->personnummer==$personnummer)
           {
-               $allSaldi[]=$kont1->saldo;
+               $allSaldi[]=$konti1->saldo;
                $allSaldi[]=$konti2->saldo;
                
           }
