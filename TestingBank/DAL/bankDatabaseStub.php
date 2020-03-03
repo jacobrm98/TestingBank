@@ -110,36 +110,42 @@
 
           $konti1=new konto();
           $konti1->personnummer=$personnummer;
-          $konti1->kontonummer="9876543212345";
+          $konti1->kontonummer="98765432123";
           $konti1->saldo=2000;
           $konti1->type="Brukskonto";
           $konti1->valuta="NOK";
           
+          $konti2->personnummer=$personnummer;
+          $konti2->kontonummer="23456543456";
+          $konti2->saldo=7000;
+          $konti2->type="Sparekonto";
+          $konti2->valuta="NOK";
+          
           if($personnummer==$konti1->personnummer)
           {
-              $konti1->kontonummer="234567892345678";
-              $allKonti[]=$konti1;
+              $allKonti[]=$konti1->kontonummer;
+              $allKonti[]=$konti1->kontonummer;
               return $allKonti;
           }
           return $allKonti;
       }
       /*function hentSaldi($personnummer)
       {
-          $allKonti=array();
-       * //Heihei
+          $allSaldi=array();
+       
 
-          $konti1=new konto();
-          $konti1->personnummer=$personnummer;
-          $konti1->kontonummer="9876543212345";
-          $konti1->saldo=2000;
-          $konti1->type="Brukskonto";
-          $konti1->valuta="NOK";
+          $konto1=new konto();
+          $konto1->personnummer=$personnummer;
+          $konto1->kontonummer="9876543212345";
+          $konto1->saldo=2000;
+          $konto1->type="Brukskonto";
+          $konto1->valuta="NOK";
 
           $allSaldi=array();
           $saldo1=new konto();
           $saldo1->personnummer="12345678901";
           
-          if($personnummer==$saldo1->personnummer)
+          if($personnummer==$konto->personnummer)
           {
                $saldo1->saldo="720";
                $allSaldi[]=$saldo;
