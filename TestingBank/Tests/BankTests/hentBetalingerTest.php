@@ -38,5 +38,6 @@ class hentBetalingerTest extends PHPUnit\Framework\TestCase {
     }
 
     //Ballestein
+    //kølle
    
 ?>
