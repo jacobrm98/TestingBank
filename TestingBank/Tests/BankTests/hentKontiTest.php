@@ -4,7 +4,7 @@ include_once '../../DAL/bankDatabaseStub.php';
 include_once '../../BLL/bankLogikk.php';
 
 class hentKontiTest extends PHPUnit\Framework\TestCase {
-    
+    /*HERRO*/
  public function test_hentiKont()
  {
      //arrange
