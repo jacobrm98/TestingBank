@@ -130,46 +130,31 @@
           }
           return $allKonti;
       }
-      /*function hentSaldi($personnummer)
+      function hentSaldi($personnummer)
       {
           $allSaldi=array();
-       
 
-          $konto1=new konto();
-          $konto1->personnummer=$personnummer;
-          $konto1->kontonummer="9876543212345";
-          $konto1->saldo=2000;
-          $konto1->type="Brukskonto";
-          $konto1->valuta="NOK";
-
-          $allSaldi=array();
-          $saldo1=new konto();
-          $saldo1->personnummer="12345678901";
+          $konti1=new konto();
+          $konti1->personnummer="01010122344";
+          $konti1->kontonummer="98765432123";
+          $konti1->saldo=2000;
+          $konti1->type="Brukskonto";
+          $konti1->valuta="NOK";
           
-          if($personnummer==$konto->personnummer)
+          $konti2=new konto();
+          $konti2->personnummer=$konti1->$personnummer;
+          $konti2->kontonummer="23456543456";
+          $konti2->saldo=7000;
+          $konti2->type="Sparekonto";
+          $konti2->valuta="NOK";
+          
+          if($kont1->personnummer==$personnummer)
           {
-               $saldo1->saldo="720";
-               $allSaldi[]=$saldo;
+               $allSaldi[]=$kont1->saldo;
+               $allSaldi[]=$konti2->saldo;
                
           }
-          return $allSaldi;   
-      }*/
-
-      function hentSaldi($personnr){
-           $saldo = array();
-        if($personnr == "20108824000"){
-            return $saldo;
-        }
-        
-        $konto = new stdClass;
-        $konto->Kontonummer = "105010123456";
-        $konto->Personnummer = $personnr;
-        $konto->Saldo = "520";
-        $konto->Type = "Lønnskonto";
-        $konto->Valuta = "NOK";
-        $saldo[]=$konto;
-        
-        return $saldo;
+          return $allSaldi;
       }
       
       function registrerBetaling($kontoNr, $transaksjon)
