@@ -205,7 +205,7 @@
           $betalinger=$konto->transaksjoner;
           return $betalinger;
       }
-      function utforBetaling($TxID)
+      function utforBetaling($TxID)//Er denne riktig?
     {
           if($TxID ==1)
           {
@@ -217,7 +217,7 @@
             }
           
       }
-      function endreKundeInfo($kunde)
+      function endreKundeInfo($kunde)//Tror man skal endre postnr
     {
           $kunde1=new kunde();
           $kunde1->fornavn="Ola";
@@ -237,7 +237,7 @@
           }
           
       }
-      function registrerKunde($kunde)
+      function registrerKunde($kunde)//Se om denne er riktig
     {
           if($kunde->ID==1)
           {
@@ -261,7 +261,7 @@
           }
           
       }
-      function hentKundeinfo($personnummer)
+      function hentKundeinfo($personnummer)//Skrive dette 
       {
           
       }
