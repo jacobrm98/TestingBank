@@ -1,5 +1,4 @@
 <?php
-/*HERRO*/
     include_once '../Model/domeneModell.php';
     class BankDBStub
     {
@@ -108,36 +107,33 @@
       function hentKonti($personnummer)
       {
           $allKonti=array();
+
           $konti1=new konto();
-          $konti1->personnummer="123454321234"; 
-          $personnummer=$konti1->personnummer;
+          $konti1->personnummer=$personnummer;
+          $konti1->kontonummer="9876543212345";
+          $konti1->saldo=2000;
+          $konti1->type="Brukskonto";
+          $konti1->valuta="NOK";
           
           if($personnummer==$konti1->personnummer)
           {
               $konti1->kontonummer="234567892345678";
               $allKonti[]=$konti1;
+              return $allKonti;
           }
           return $allKonti;
-      /*function hentKonti($personnummer)
-      {
-        $allKonti=array();
-                $konti1 = new konto();
-                $konti2 = new konto();
-                $konti1->personnummer=01010110523;
-                if ($personnummer == $konti1->personnummer){
-                    $konti1->kontonummer=105010123456;
-                    $konti[]= $konto1;
-                    $konti2->kontonummer=105010123499;
-                    $allKonti[]= $konti2;
-                return $AllKonti;
-                }
-                else {
-                    $allKonti[]=" ";
-                    return $allKonti;
-                }*/
       }
       /*function hentSaldi($personnummer)
       {
+          $allKonti=array();
+
+          $konti1=new konto();
+          $konti1->personnummer=$personnummer;
+          $konti1->kontonummer="9876543212345";
+          $konti1->saldo=2000;
+          $konti1->type="Brukskonto";
+          $konti1->valuta="NOK";
+
           $allSaldi=array();
           $saldo1=new konto();
           $saldo1->personnummer="12345678901";
@@ -150,6 +146,7 @@
           }
           return $allSaldi;   
       }*/
+
       function hentSaldi($personnr){
            $saldo = array();
         if($personnr == "20108824000"){
@@ -165,7 +162,7 @@
         $saldo[]=$konto;
         
         return $saldo;
-            }
+      }
       
       function registrerBetaling($kontoNr, $transaksjon)
     {
