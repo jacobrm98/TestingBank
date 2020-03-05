@@ -127,7 +127,7 @@
           {
               $allKonti[] = $konti1->kontonummer;
               $allKonti[] = $konti2->kontonummer;
-              return $allKonti;
+              //return $allKonti;
           }
           return $allKonti;
       }
