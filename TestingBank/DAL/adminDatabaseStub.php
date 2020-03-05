@@ -33,7 +33,8 @@ class adminDBStub
           $kunde1=new kunde();
           $kunde1->fornavn="Ola";
           $kunde1->personnummer="12345678901";
-          if($kunde->fornavn==$kunde1->fornavn && $kunde->personnummer==$kunde1->personnummer)
+          
+          if($kunde->fornavn == $kunde1->fornavn && $kunde->personnummer == $kunde1->personnummer)
           {
               return "OK";
           }  
@@ -45,15 +46,15 @@ class adminDBStub
       }
     function registrerKunde($kunde)
     {
-          $kunde1=new kunde();
-          $kunde1->personnummer="12345678999";
-          $kunde1->fornavn="Ola";
-          $kunde1->etternavn="Hansen";
-          $kunde1->adresse="Heiaveien 5";
-          $kunde1->postnr="0234";
-          $kunde1->telefonnr="12345678";
-          $kunde1->passord="HeiaHeia";
-          if($kunde==!null)
+          $kunde1 = new kunde();
+          $kunde1->personnummer = "12345678999";
+          $kunde1->fornavn = "Ola";
+          $kunde1->etternavn = "Hansen";
+          $kunde1->adresse = "Heiaveien 5";
+          $kunde1->postnr = "0234";
+          $kunde1->telefonnr = "12345678";
+          $kunde1->passord = "HeiaHeia";
+          if($kunde == !null)
           {
               return "OK";
           }
@@ -65,7 +66,7 @@ class adminDBStub
       }
     function slettKunde($personnummer)
     {
-          if($personnummer=1)
+          if($personnummer = 1)
           {
               return "OK";
           }
@@ -78,12 +79,13 @@ class adminDBStub
     
     function registerKonto($konto)
     {
-       $konto1=new konto();
-       $Kontor=array();
-       if($konto1=!null)
+       $konto = new konto();
+       $konti = array();
+       
+       if($konto = !null)
        {
-           $konto1="123456789123456789";
-           $Kontor[]=$konto1;
+           $konto = "123456789123456789";
+           $konti[] = $konto;
            return "OK";
        }
        else
@@ -94,38 +96,38 @@ class adminDBStub
     
     function endreKonto($konto)
     {
-        $konto1=new $konto;
-        $konto1->kontonummer=12345678912345;
-        $konto1->personnummer=123456781234567;
-        if($konto1->kontonummer=$konto && $konto1->personnummer=!null)
+        $konto1 = new $konto;
+        $konto1->kontonummer = 12345678912345;
+        $konto1->personnummer = 123456781234567;
+        if($konto1->kontonummer = $konto && $konto1->personnummer=!null)
         {
             return "OK";
         }
     }
     function hentAlleKonti()
     {
-        $konti=array();
+        $konti = array();
         
-        $konto1=new konto();
-        $konto1->kontonummer=12345672345;
-        $konti[]=$konto1;
+        $konto1 = new konto();
+        $konto1->kontonummer = 12345672345;
+        $konti[] = $konto1;
         
-         $konto2=new konto();
-        $konto2->kontonummer=98765437654;
-        $konti[]=$konto2;
+        $konto2 = new konto();
+        $konto2->kontonummer = 98765437654;
+        $konti[] = $konto2;
         
-         $konto3=new konto();
-        $konto3->kontonummer=45676543234;
-        $konti[]=$konto3;
+        $konto3 = new konto();
+        $konto3->kontonummer = 45676543234;
+        $konti[] = $konto3;
         
         return $konti;
         
     }
     function slettKonto($kontonummer)
     {
-        $kontonummer1=new $kontonummer;
-        $kontonummer1->kontonummer=12345643234565;
-        if($kontonummer=$kontonummer1->kontonummer)
+        $kontonummer1 = new $kontonummer;
+        $kontonummer1->kontonummer = 12345643234565;
+        if($kontonummer = $kontonummer1->kontonummer)
        {
             return "OK";
        }
