@@ -160,7 +160,7 @@
       
       function registrerBetaling($kontoNr, $transaksjon)
     {
-          if($kontoNr==1 && $transaksjon==1)
+          if($kontoNr == 1 && $transaksjon == 1)
           {
               return "OK";
           }
@@ -173,33 +173,33 @@
       function hentBetalinger($personnummer)
     {
           //Usikker hvordan testes
-          $allBetalinger=array();
-          $konto=new konto();
-          $konto->personnummer="1234567654321";
-          if($personnummer==$konto->personnummer)
+          $allBetalinger = array();
+          $konto = new konto();
+          $konto->personnummer = "1234567654321";
+          if($personnummer == $konto->personnummer)
           {
-              $konto->transaksjoner=array();
+              $konto->transaksjoner = array();
               
               $transaksjon1 = new transaksjon();
-              $transaksjon1->dato='2015-03-26';
-              $transaksjon1->transaksjonBelop=134.4;
-              $transaksjon1->fraTilKontonummer="22342344556";
-              $transaksjon1->melding="Meny Holtet";
-              $konto->transaksjoner[]=$transaksjon1;
+              $transaksjon1->dato = '2015-03-26';
+              $transaksjon1->transaksjonBelop = 134.4;
+              $transaksjon1->fraTilKontonummer = "22342344556";
+              $transaksjon1->melding = "Meny Holtet";
+              $konto->transaksjoner[] = $transaksjon1;
                         
               $transaksjon2 = new transaksjon();
-              $transaksjon2->dato='2015-03-27';
-              $transaksjon2->transaksjonBelop=-2056.45;
-              $transaksjon2->fraTilKontonummer="114342344556";
-              $transaksjon2->melding="Husleie";
-              $konto->transaksjoner[]=$transaksjon2; 
+              $transaksjon2->dato = '2015-03-27';
+              $transaksjon2->transaksjonBelop = -2056.45;
+              $transaksjon2->fraTilKontonummer = "114342344556";
+              $transaksjon2->melding = "Husleie";
+              $konto->transaksjoner[] = $transaksjon2;
                         
               $transaksjon3 = new transaksjon();
               $transaksjon3->dato = '2015-03-29';
-              $transaksjon3->transaksjonBelop=1454.45;
-              $transaksjon3->fraTilKontonummer="114342344511";
-              $transaksjon3->melding="Lekeland";
-              $konto->transaksjoner[]=$transaksjon3;
+              $transaksjon3->transaksjonBelop = 1454.45;
+              $transaksjon3->fraTilKontonummer = "114342344511";
+              $transaksjon3->melding = "Lekeland";
+              $konto->transaksjoner[] = $transaksjon3;
           }
           
           $betalinger=$konto->transaksjoner;
@@ -221,15 +221,15 @@
       }
       function endreKundeInfo($kunde)
     {
-          $kunde1=new kunde();
-          $kunde1->fornavn="Ola";
-          $kunde1->etternavn="Nordmann";
-          $kunde1->adresse="Heiaveien 5";
-          $kunde1->postnr="0477";
-          $kunde1->telefonnr="12345678";
-          $kunde1->passord="HeiHei";
-          $kunde1->personnummer="12345678901";
-          if($kunde->fornavn==$kunde1->fornavn && $kunde->etternavn==$kunde1->etternavn)
+          $kunde1 = new kunde();
+          $kunde1->fornavn = "Ola";
+          $kunde1->etternavn = "Nordmann";
+          $kunde1->adresse = "Heiaveien 5";
+          $kunde1->postnr = "0477";
+          $kunde1->telefonnr = "12345678";
+          $kunde1->passord = "HeiHei";
+          $kunde1->personnummer = "12345678901";
+          if($kunde->fornavn == $kunde1->fornavn && $kunde->etternavn == $kunde1->etternavn)
           {
               return "OK";
           }  
@@ -265,21 +265,18 @@
       }
       function hentKundeinfo($personnummer) 
       {
-          $kunde1=new kunde();
-          $kunde1->fornavn="Ola";
-          $kunde1->etternavn="Nordmann";
-          $kunde1->adresse="Heiaveien 5";
-          $kunde1->postnr="0477";
-          $kunde1->telefonnr="12345678";
-          $kunde1->passord="HeiHei";
-          $kunde1->personnummer="12345678901";
+          $kunde1 = new kunde();
+          $kunde1->fornavn = "Ola";
+          $kunde1->etternavn = "Nordmann";
+          $kunde1->adresse = "Heiaveien 5";
+          $kunde1->postnr = "0477";
+          $kunde1->telefonnr = "12345678";
+          $kunde1->passord = "HeiHei";
+          $kunde1->personnummer = "12345678901";
           
-          if($personnummer == $kunde1->personnummer)
-          {
+          if($personnummer == $kunde1->personnummer) {
               return $kunde1;
-          }
-          else
-          {
+          } else {
               return "Feil";
           }
       }
