@@ -70,7 +70,7 @@ class Bank
     
     function endreKundeInfo($kunde)
     {
-        $OK= $this->db->endreKundeInfo($kunde);
+        $OK = $this->db->endreKundeInfo($kunde);
         return $OK;
     }
     

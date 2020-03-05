@@ -172,8 +172,6 @@
       }
       function hentBetalinger($personnummer)
     {
-          //Usikker hvordan testes
-          $allBetalinger = array();
           $konto = new konto();
           $konto->personnummer = "1234567654321";
           if($personnummer == $konto->personnummer)
@@ -186,14 +184,14 @@
               $transaksjon1->fraTilKontonummer = "22342344556";
               $transaksjon1->melding = "Meny Holtet";
               $konto->transaksjoner[] = $transaksjon1;
-                        
+
               $transaksjon2 = new transaksjon();
               $transaksjon2->dato = '2015-03-27';
               $transaksjon2->transaksjonBelop = -2056.45;
               $transaksjon2->fraTilKontonummer = "114342344556";
               $transaksjon2->melding = "Husleie";
               $konto->transaksjoner[] = $transaksjon2;
-                        
+
               $transaksjon3 = new transaksjon();
               $transaksjon3->dato = '2015-03-29';
               $transaksjon3->transaksjonBelop = 1454.45;
@@ -201,9 +199,7 @@
               $transaksjon3->melding = "Lekeland";
               $konto->transaksjoner[] = $transaksjon3;
           }
-          
-          $betalinger=$konto->transaksjoner;
-          return $betalinger;
+          return $konto->transaksjoner;
       }
       function utforBetaling($TxID)
     {
