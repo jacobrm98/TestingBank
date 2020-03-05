@@ -11,13 +11,13 @@ class BankDB
     
     function hentTransaksjoner($kontonr,$fraDato,$tilDato)
     {
-        if($fraDato=="")
+        if($fraDato == "")
         {
-            $fraDato="2000-01-01";
+            $fraDato = "2000-01-01";
         }
-        if($tilDato=="")
+        if($tilDato == "")
         {
-            $tilDato="2100-01-01";
+            $tilDato = "2100-01-01";
         }
         $konto = new konto();
         $sql = "Select * from Konto Where Kontonummer = '$kontonr'";
@@ -43,11 +43,11 @@ class BankDB
             $tx = new transaksjon();
             $tx->fraTilKontonummer = $rad->FraTilKontonummer;
             $tx->dato = $rad->Dato;
-            $tx->melding=$rad->Melding;
+            $tx->melding = $rad->Melding;
             $tx->transaksjonBelop = $rad->Belop;
-            $transaksjoner[]=$tx;
+            $transaksjoner[] = $tx;
         }
-        $konto->transaksjoner=$transaksjoner;
+        $konto->transaksjoner = $transaksjoner;
         return $konto;
     }
     function sjekkLoggInn($personnummer,$passord)
@@ -56,7 +56,7 @@ class BankDB
                 . "passord = '$passord'";
         $resultat = $this->db->query($sql);
         $rad = $resultat->fetch_object();
-        if($rad==!null)
+        if($rad == !null)
         {
             return "OK";
         }
@@ -72,7 +72,7 @@ class BankDB
         $konti = array();
         while($rad = $resultat->fetch_object())
         {
-            $konti[]=$rad;
+            $konti[] = $rad;
         }
         return $konti;
     }
@@ -84,7 +84,7 @@ class BankDB
         $saldi = array();
         while($rad = $resultat->fetch_object())
         {
-            $saldi[]=$rad;
+            $saldi[] = $rad;
         }
         return $saldi;
     }
@@ -115,7 +115,7 @@ class BankDB
         $betalinger = array();
         while($rad = $resultat->fetch_object())
         {
-            $betalinger[]=$rad;
+            $betalinger[] = $rad;
         }
         return $betalinger;
     }
