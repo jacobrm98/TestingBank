@@ -127,7 +127,6 @@
           {
               $allKonti[] = $konti1->kontonummer;
               $allKonti[] = $konti2->kontonummer;
-              //return $allKonti;
           }
           return $allKonti;
       }
@@ -259,22 +258,21 @@
           }
           
       }
-      function hentKundeinfo($personnummer) 
-      {
-          $kunde1 = new kunde();
-          $kunde1->fornavn = "Ola";
-          $kunde1->etternavn = "Nordmann";
-          $kunde1->adresse = "Heiaveien 5";
-          $kunde1->postnr = "0477";
-          $kunde1->telefonnr = "12345678";
-          $kunde1->passord = "HeiHei";
-          $kunde1->personnummer = "12345678901";
-          
-          if($personnummer == $kunde1->personnummer) {
-              return $kunde1;
-          } else {
-              return "Feil";
-          }
-      }
-    }
+      function hentKundeinfo($personnummer) {
+            $kunde1 = new kunde();
+            $kunde1->personnummer = "12345678901";
+
+            if($personnummer == $kunde1->personnummer) {
+                $kunde1->fornavn = "Ola";
+                $kunde1->etternavn = "Nordmann";
+                $kunde1->adresse = "Heiaveien 5";
+                $kunde1->postnr = "0477";
+                $kunde1->telefonnr = "12345678";
+                $kunde1->passord = "HeiHei";
+                return $kunde1;
+            } else {
+                return "Feil";
+            }
+        }
+}
     

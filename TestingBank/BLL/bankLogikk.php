@@ -76,7 +76,7 @@ class Bank
     
     function hentKundeInfo($personnummer)
     {
-        $kunde= $this->db->hentKundeInfo($personnummer);
+        $kunde = $this->db->hentKundeInfo($personnummer);
         return $kunde;
     }
 }

@@ -4,8 +4,8 @@ include_once '../../DAL/bankDatabaseStub.php';
 include_once '../../BLL/bankLogikk.php';
 
 class hentKontiTest extends PHPUnit\Framework\TestCase {
- public function test_hentKonti()
- {
+    public function test_hentKonti()
+    {
      //arrange
      $personnummer = "01010122344"; // Korrekt personnummer
      $bankLogikk = new Bank(new BankDBStub());
@@ -19,7 +19,8 @@ class hentKontiTest extends PHPUnit\Framework\TestCase {
      echo "Konti nr 1: ".$allKonti[0];
      echo "\n";
      echo "Konti nr 2: ".$allKonti[1];
- }
+    }
+
     public function test_hentKontiFeilPersonummer()
     {
         //arrange
