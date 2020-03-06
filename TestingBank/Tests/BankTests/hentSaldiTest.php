@@ -5,21 +5,24 @@ include_once '../../BLL/bankLogikk.php';
 
 
 class hentSalditest extends PHPUnit\Framework\TestCase {
-    /*public function test_hentSaldi()
+    public function test_hentSaldi_OK()
     {
-        //arrange
-       $personnummer=12345432345;
-        $bankLogikk=new Bank(new BankDBStub());
-        //act
-        $saldi=$bankLogikk->hentSaldi($personnummer);
-        //assert
-        $this->assertEquals(1,$saldi);
-    }*/
-    public function testWithCorrectPersonnr(){
-        $personnr = 01010122344;
-        $bank=new Bank(new BankDBStub());
-        $saldo = sizeof($bank->hentSaldi($personnr));
-        $this->assertEquals(1,$saldo); 
+        // arrange
+        $personnummer = "01010122344";
+        $bankLogikk = new Bank(new BankDBStub());
+
+        // act
+        $allSaldi = $bankLogikk->hentSaldi($personnummer);
+
+        // assert
+        $this->assertEquals(2000, $allSaldi[0]->saldo);
+        $this->assertEquals("98765432123", $allSaldi[0]->kontonummer);
+        $this->assertEquals("Brukskonto", $allSaldi[0]->type);
+        $this->assertEquals("NOK", $allSaldi[0]->valuta);
+
+        $this->assertEquals(7000, $allSaldi[1]->saldo);
+        $this->assertEquals("23456543456", $allSaldi[1]->kontonummer);
+        $this->assertEquals("Sparekonto", $allSaldi[1]->type);
+        $this->assertEquals("NOK", $allSaldi[1]->valuta);
     }
- 
 }
