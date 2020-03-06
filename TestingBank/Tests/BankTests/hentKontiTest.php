@@ -16,9 +16,6 @@ class hentKontiTest extends PHPUnit\Framework\TestCase {
      //assert
      $this->assertEquals("98765432123", $allKonti[0]);
      $this->assertEquals("23456543456", $allKonti[1]);
-     echo "Konti nr 1: ".$allKonti[0];
-     echo "\n";
-     echo "Konti nr 2: ".$allKonti[1];
     }
 
     public function test_hentKontiFeilPersonummer()
@@ -32,8 +29,6 @@ class hentKontiTest extends PHPUnit\Framework\TestCase {
 
         //assert
         $this->assertEquals(0,count($allKonti));
-        echo "Feil personnummer gir tomt array";
-
     }
 }
 ?>

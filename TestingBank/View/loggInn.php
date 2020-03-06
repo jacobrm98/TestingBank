@@ -24,6 +24,7 @@ include_once 'minNavigasjon.php';
                 }
             });
         });
+
         // input validering
         $("#personNr").change(function(){
             $('#feilPersonNr').html("");

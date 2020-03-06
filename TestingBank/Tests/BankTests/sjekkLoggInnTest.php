@@ -5,39 +5,95 @@ include_once '../../BLL/bankLogikk.php';
 
 
 class sjekkLogginnTest extends PHPUnit\Framework\TestCase {
-    
-    public function test_sjekkLoggInn()
-    {
-    //arrange
-    $bankLogikk=new Bank(new BankDBStub());
-    $personnummer="12121212123";
-    $passord="HeiHei";
-    //act
-    $OK=$bankLogikk->sjekkLoggInn($personnummer,$passord);
-    //assert
-    $this->assertEquals($OK,"OK");
-    }
-    public function test_sjekkLogginnFeilPersonnummer()
+
+    public function test_sjekkLoggInnOK()
     {
         //arrange
-        $bankLogikk=new Bank(new BankDBStub());
-        $personnummer=1234567;
-        $passord="HeiHei";
-        //act
-        $OK=$bankLogikk->sjekkLoggInn($personnummer, $passord);
-        //assert
-        $this->assertEquals($OK,"Feil i personnummer");
+        $kunde = new kunde();
+        $kunde->personnummer = "12121212121";
+        $kunde->passord = "HeiHei";
+        $bankLogikk = new Bank(new BankDBStub());
+
+        // act
+        $OK = $bankLogikk->sjekkLoggInn($kunde->personnummer, $kunde->passord);
+
+        // assert
+        $this->assertEquals("OK", $OK);
     }
-    public function test_sjekkLogginnFeilPassord()
+
+    public function test_sjekkLoggInnFeilPassord()
     {
-         //arrange
-        $bankLogikk=new Bank (new BankDBStub());
-        $personnummer=12345678909;
-        $passord="Pass";
-        //act
-        $feil=$bankLogikk->sjekkLoggInn($personnummer, $passord);
-        //assert
-        $this->assertEquals($feil,"Feil i passord");
+        //arrange
+        $kunde = new kunde();
+        $kunde->personnummer = "12121212121";
+        $kunde->passord = "Heihei";  // Feil passord
+        $bankLogikk = new Bank(new BankDBStub());
+
+        // act
+        $Feil = $bankLogikk->sjekkLoggInn($kunde->personnummer, $kunde->passord);
+
+        // assert
+        $this->assertEquals("Feil", $Feil);
+    }
+
+    public function test_sjekkLoggInnFeilPersonnummer()
+    {
+        //arrange
+        $kunde = new kunde();
+        $kunde->personnummer = "99999999999";  // Feil personnummer
+        $kunde->passord = "HeiHei";
+        $bankLogikk = new Bank(new BankDBStub());
+
+        // act
+        $Feil = $bankLogikk->sjekkLoggInn($kunde->personnummer, $kunde->passord);
+
+        // assert
+        $this->assertEquals("Feil", $Feil);
+    }
+
+    public function test_sjekkLoggInn_RegExFeilPersonnummer()
+    {
+        //arrange
+        $kunde = new kunde();
+        $kunde->personnummer = "99999999AAA";  // RegEx feil personnummer
+        $kunde->passord = "HeiHei";
+        $bankLogikk = new Bank(new BankDBStub());
+
+        // act
+        $Feil = $bankLogikk->sjekkLoggInn($kunde->personnummer, $kunde->passord);
+
+        // assert
+        $this->assertEquals("Feil i personnummer", $Feil);
+    }
+
+    public function test_sjekkLoggInn_ForKortPassord()
+    {
+        //arrange
+        $kunde = new kunde();
+        $kunde->personnummer = "12121212121";
+        $kunde->passord = "Hei";  // RegEx feil passord
+        $bankLogikk = new Bank(new BankDBStub());
+
+        // act
+        $Feil = $bankLogikk->sjekkLoggInn($kunde->personnummer, $kunde->passord);
+
+        // assert
+        $this->assertEquals("Feil i passord", $Feil);
+    }
+
+    public function test_sjekkLoggInn_ForLangtPassord() // Funnet feil i BankLogikk, mulig å ha for lang passord
+    {
+        //arrange
+        $kunde = new kunde();
+        $kunde->personnummer = "12121212121";
+        $kunde->passord = "HeiHeiHeiHeiHeiHeiHeiHeiHeiHeiHeiHei";  // RegEx feil passord
+        $bankLogikk = new Bank(new BankDBStub());
+
+        // act
+        $Feil = $bankLogikk->sjekkLoggInn($kunde->personnummer, $kunde->passord);
+
+        // assert
+        $this->assertEquals("Feil i passord", $Feil);
     }
 }
 ?>
