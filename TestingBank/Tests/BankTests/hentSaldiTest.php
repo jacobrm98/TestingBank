@@ -25,4 +25,17 @@ class hentSalditest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("Sparekonto", $allSaldi[1]->type);
         $this->assertEquals("NOK", $allSaldi[1]->valuta);
     }
+
+    public function test_hentSaldi_FeilPersonnummer()
+    {
+        // arrange
+        $personnummer = "12345678901";  // Feil personnummer
+        $bankLogikk = new Bank(new BankDBStub());
+
+        // act
+        $allSaldi = $bankLogikk->hentSaldi($personnummer);
+
+        // assert
+        $this->assertEquals(0, sizeof($allSaldi));
+    }
 }

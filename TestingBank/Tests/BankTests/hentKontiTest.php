@@ -28,7 +28,7 @@ class hentKontiTest extends PHPUnit\Framework\TestCase {
         $allKonti = $bankLogikk->hentKonti($personnummer);
 
         //assert
-        $this->assertEquals(0,count($allKonti));
+        $this->assertEquals(0, sizeof($allKonti));
     }
 }
 ?>
