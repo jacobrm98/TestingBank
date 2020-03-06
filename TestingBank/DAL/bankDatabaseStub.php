@@ -94,9 +94,9 @@
       function sjekkLoggInn($personnnummer,$passord)
       {
           $kunde = new kunde();
-          $kunde->personnummer = "1212121212";
+          $kunde->personnummer = "12121212121";
           $kunde->passord = "HeiHei";
-          if($kunde->personnummer = !null && $kunde->passord = !null)
+          if($kunde->personnummer == $personnnummer && $kunde->passord == $passord)
           {
               return "OK";
           }
