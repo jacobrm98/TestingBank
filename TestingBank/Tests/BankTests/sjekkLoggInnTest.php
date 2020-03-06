@@ -8,7 +8,7 @@ class sjekkLogginnTest extends PHPUnit\Framework\TestCase {
 
     public function test_sjekkLoggInnOK()
     {
-        //arrange
+        // arrange
         $kunde = new kunde();
         $kunde->personnummer = "12121212121";
         $kunde->passord = "HeiHei";
@@ -23,7 +23,7 @@ class sjekkLogginnTest extends PHPUnit\Framework\TestCase {
 
     public function test_sjekkLoggInnFeilPassord()
     {
-        //arrange
+        // arrange
         $kunde = new kunde();
         $kunde->personnummer = "12121212121";
         $kunde->passord = "Heihei";  // Feil passord
@@ -38,7 +38,7 @@ class sjekkLogginnTest extends PHPUnit\Framework\TestCase {
 
     public function test_sjekkLoggInnFeilPersonnummer()
     {
-        //arrange
+        // arrange
         $kunde = new kunde();
         $kunde->personnummer = "99999999999";  // Feil personnummer
         $kunde->passord = "HeiHei";
@@ -53,7 +53,7 @@ class sjekkLogginnTest extends PHPUnit\Framework\TestCase {
 
     public function test_sjekkLoggInn_RegExFeilPersonnummer()
     {
-        //arrange
+        // arrange
         $kunde = new kunde();
         $kunde->personnummer = "99999999AAA";  // RegEx feil personnummer
         $kunde->passord = "HeiHei";
@@ -68,7 +68,7 @@ class sjekkLogginnTest extends PHPUnit\Framework\TestCase {
 
     public function test_sjekkLoggInn_ForKortPassord()
     {
-        //arrange
+        // arrange
         $kunde = new kunde();
         $kunde->personnummer = "12121212121";
         $kunde->passord = "Hei";  // RegEx feil passord
@@ -83,7 +83,7 @@ class sjekkLogginnTest extends PHPUnit\Framework\TestCase {
 
     public function test_sjekkLoggInn_ForLangtPassord() // Funnet feil i BankLogikk, mulig å ha for lang passord
     {
-        //arrange
+        // arrange
         $kunde = new kunde();
         $kunde->personnummer = "12121212121";
         $kunde->passord = "HeiHeiHeiHeiHeiHeiHeiHeiHeiHeiHeiHei";  // RegEx feil passord
