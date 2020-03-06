@@ -5,24 +5,28 @@ include_once '../../BLL/bankLogikk.php';
 
 
 class utforBetalingTest extends PHPUnit\Framework\TestCase {
-    public function test_utforBetaling()
+    public function test_utforBetalingOK()
     {
-        //arrange
+        // arrange
         $bankLogikk=new Bank(new BankDBStub());
         $TxID=1;
-        //act
+
+        // act
         $OK=$bankLogikk->utforBetaling($TxID);
-        //assert
+
+        // assert
         $this->assertEquals("OK",$OK);
     }
     public function test_utforBetaling_FEIL()
     {
-        //arrange
+        // arrange
         $bankLogikk=new Bank(new BankDBStub());
         $TxID=2;
-        //act
+
+        // act
         $feil=$bankLogikk->utforBetaling($TxID);
-        //assert
+
+        // assert
         $this->assertEquals($feil,"Feil");
     }
 }
