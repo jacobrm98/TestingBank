@@ -150,8 +150,8 @@
           
           if($konti1->personnummer == $personnummer)
           {
-               $allSaldi[] = $konti1->saldo;
-               $allSaldi[] = $konti2->saldo;
+               $allSaldi[] = $konti1;
+               $allSaldi[] = $konti2;
                
           }
           return $allSaldi;
