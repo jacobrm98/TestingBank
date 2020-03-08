@@ -8,11 +8,11 @@ class utforBetalingTest extends PHPUnit\Framework\TestCase {
     public function test_utforBetalingOK()
     {
         // arrange
-        $bankLogikk=new Bank(new BankDBStub());
-        $TxID=1;
+        $bankLogikk = new Bank(new BankDBStub());
+        $TxID = 1;
 
         // act
-        $OK=$bankLogikk->utforBetaling($TxID);
+        $OK = $bankLogikk->utforBetaling($TxID);
 
         // assert
         $this->assertEquals("OK",$OK);
@@ -20,11 +20,11 @@ class utforBetalingTest extends PHPUnit\Framework\TestCase {
     public function test_utforBetaling_FEIL()
     {
         // arrange
-        $bankLogikk=new Bank(new BankDBStub());
-        $TxID=2;
+        $bankLogikk = new Bank(new BankDBStub());
+        $TxID = 2;
 
         // act
-        $feil=$bankLogikk->utforBetaling($TxID);
+        $feil = $bankLogikk->utforBetaling($TxID);
 
         // assert
         $this->assertEquals($feil,"Feil");

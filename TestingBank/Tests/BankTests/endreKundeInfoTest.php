@@ -5,7 +5,7 @@ include_once '../../BLL/bankLogikk.php';
 
 
 class endreKundeinfoTest extends PHPUnit\Framework\TestCase {
-    public function test_endreKundeinfo()
+    public function test_endreKundeInfo()
     {
         //arrange
         $bankLogikk = new Bank(new BankDBStub());
