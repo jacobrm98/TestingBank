@@ -4,7 +4,7 @@ include_once '../../DAL/adminDatabaseStub.php';
 include_once '../../BLL/adminLogikk.php';
 
 class registrerKundeTest extends PHPUnit\Framework\TestCase {
-
+//Usikker på om jeg må opprette hele kunden? Men det står "Select * from $kunde i adminDatabase"
     public function testRiktigPostNr()
     {
         //arrange
