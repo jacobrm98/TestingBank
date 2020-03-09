@@ -9,27 +9,53 @@ class registrerBetalingTest extends PHPUnit\Framework\TestCase {
     {
         // arrange
         $bankLogikk = new Bank(new BankDBStub());
-        $kontoNr = 1;
+        $kontoNr = "12345678910";
         $transaksjon = 1;
 
         // act
         $OK = $bankLogikk->registrerBetaling($kontoNr, $transaksjon);
 
         // assert
-        $this->assertEquals("OK",$OK);
+        $this->assertEquals("OK", $OK);
     }
-    public function test_registrerBetalingFEIL()
+    public function test_registrerBetaling_FeilKontonummer()
     {
         // arrange
         $bankLogikk = new Bank(new BankDBStub());
-        $kontoNr = -1;
-        $transaksjon = -1;
+        $kontoNr = "10987654321";
+        $transaksjon = 1;
 
         // act
         $feil = $bankLogikk->registrerBetaling($kontoNr, $transaksjon);
 
         // assert
-        $this->assertEquals($feil,"Feil");
+        $this->assertEquals("Feil", $feil);
     }
+    public function test_registrerBetaling_FeilTransaksjon()
+    {
+        // arrange
+        $bankLogikk = new Bank(new BankDBStub());
+        $kontoNr = "12345678910";
+        $transaksjon = -5;
+
+        // act
+        $feil = $bankLogikk->registrerBetaling($kontoNr, $transaksjon);
+
+        // assert
+        $this->assertEquals("Feil", $feil);
+    }
+    public function test_registrerBetaling_AltFeil()
+    {
+        // arrange
+        $bankLogikk = new Bank(new BankDBStub());
+        $kontoNr = 7492758219;
+        $transaksjon = 69.420;
+        // act
+        $feil = $bankLogikk->registrerBetaling($kontoNr, $transaksjon);
+
+        // assert
+        $this->assertEquals("Feil", $feil);
+    }
+
 }
 ?>

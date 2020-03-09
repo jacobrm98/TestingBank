@@ -3,41 +3,6 @@
 
     class BankDBStub
     {
-        function hentEnKunde($personnummer)
-        {
-           $enKunde = new kunde();
-           $enKunde->personnummer = $personnummer;
-           $enKunde->fornavn = "Per";
-           $enKunde->etternavn = "Olsen";
-           $enKunde->adresse = "Osloveien 82, 0270 Oslo";
-           $enKunde->telefonnr = "12345678";
-           return $enKunde;
-        }
-        function hentAlleKunder()
-        {
-           $alleKunder = array();
-           $kunde1 = new kunde();
-           $kunde1->personnummer = "01010122344";
-           $kunde1->navn = "Per Olsen";
-           $kunde1->adresse = "Osloveien 82 0270 Oslo";
-           $kunde1->telefonnr = "12345678";
-           $alleKunder[] = $kunde1;
-           
-           $kunde2 = new kunde();
-           $kunde2->personnummer = "01010122344";
-           $kunde2->navn = "Line Jensen";
-           $kunde2->adresse = "Askerveien 100, 1379 Asker";
-           $kunde2->telefonnr = "92876789";
-           $alleKunder[] = $kunde2;
-           
-           $kunde3 = new kunde();
-           $kunde3->personnummer = "02020233455";
-           $kunde3->navn = "Ole Olsen";
-           $kunde3->adresse = "Bærumsveien 23, 1234 Bærum";
-           $kunde3->telefonnr = "99889988";
-           $alleKunder[] = $kunde3;
-           return $alleKunder;
-        }
         function hentTransaksjoner($kontoNr,$fraDato,$tilDato)
         {
             date_default_timezone_set("Europe/Oslo");
@@ -159,7 +124,7 @@
       
       function registrerBetaling($kontoNr, $transaksjon)
     {
-          if($kontoNr == 1 && $transaksjon == 1)
+          if($kontoNr == "12345678910" && $transaksjon == 1)
           {
               return "OK";
           }
@@ -202,14 +167,12 @@
       }
       function utforBetaling($TxID)
     {
-          $feil = false;
           if($TxID == 1)
           {
               return "OK";
           }
           else
           {
-              $feil = true; 
               return "Feil";
           }
           
