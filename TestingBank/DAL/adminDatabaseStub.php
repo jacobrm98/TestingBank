@@ -30,6 +30,7 @@ function hentAlleKunder()
         
         return $alleKunder;
     }
+
     function endreKundeInfo($kunde)
     {
         $kunde1 = new kunde();
