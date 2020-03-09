@@ -197,7 +197,7 @@
           }
           
       }
-      function registrerKunde($kunde)
+      function registrerKunde($kunde)//Ikke i bankLogikken
     {
           if($kunde->ID == 1)
           {
@@ -209,7 +209,7 @@
           }
 
       }
-      function slettKunde($personnummer)
+      function slettKunde($personnummer)//Ikke i bankLogikken
     {
           if($personnummer == 1)
           {
