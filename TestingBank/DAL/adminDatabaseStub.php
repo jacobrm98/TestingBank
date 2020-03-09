@@ -169,7 +169,7 @@ function hentAlleKunder()
         }
         return $allKonti;
     }
-    function slettKonto($kontonummer)
+    function slettKonto($personnummer)
     {
         $kunde1 = new kunde();
         $kunde1->fornavn = "Ola";
@@ -180,7 +180,7 @@ function hentAlleKunder()
         $kunde1->passord = "HeiHei";
         $kunde1->personnummer = "12345678901";
         
-        if($kunde->kontonummer == $kontonummer)
+        if($kunde->personnummer == $personnummer)
         {
             return "OK";
         }
