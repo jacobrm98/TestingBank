@@ -29,5 +29,6 @@ class utforBetalingTest extends PHPUnit\Framework\TestCase {
         // assert
         $this->assertEquals("Feil", $feil);
     }
+    
 }
 ?>

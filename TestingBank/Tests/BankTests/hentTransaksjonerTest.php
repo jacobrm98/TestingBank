@@ -124,4 +124,5 @@ class hentTransaksjonerTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("114342344511",$konto->transaksjoner[2]->fraTilKontonummer);
         $this->assertEquals("Lekeland",$konto->transaksjoner[2]->melding);
     }
+
 }

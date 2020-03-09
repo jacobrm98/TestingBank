@@ -96,4 +96,5 @@ class sjekkLogginnTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("Feil i passord", $Feil);
     }
 }
+
 ?>

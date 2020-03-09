@@ -38,4 +38,5 @@ class hentSalditest extends PHPUnit\Framework\TestCase {
         // assert
         $this->assertEquals(0, sizeof($allSaldi));
     }
+
 }

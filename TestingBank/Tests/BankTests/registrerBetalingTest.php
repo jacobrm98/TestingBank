@@ -56,6 +56,5 @@ class registrerBetalingTest extends PHPUnit\Framework\TestCase {
         // assert
         $this->assertEquals("Feil", $feil);
     }
-
 }
 ?>
