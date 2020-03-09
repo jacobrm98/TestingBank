@@ -19,6 +19,7 @@ class registrerKundeTest extends PHPUnit\Framework\TestCase {
         $kunde->passord = "123456"; */
         $kunde->postnr = "0481";
 
+
         //act
         $result = $adminLogikk->registrerKunde($kunde);
 
