@@ -51,7 +51,7 @@ class AdminDBStub
     }
     function registrerKunde($kunde)
     {
-        if($kunde->ID == 1)
+        if($kunde->postnr == "0481")
         {
             return "OK";
         }
