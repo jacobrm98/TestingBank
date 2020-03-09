@@ -193,7 +193,7 @@ class BankDB
         return "OK";
     }
     
-    function registrerKunde($kunde)
+    function registrerKunde($kunde)//Ikke i banklogikken
     {
         $this->db->autocommit(false);
         // Sjekk om nytt postnr ligger i Poststeds-tabellen, dersom ikke legg det inn
@@ -227,7 +227,7 @@ class BankDB
         }
     }
     
-    function slettKunde($personnummer)
+    function slettKunde($personnummer)//Ikke i bankLogikken
     {
         $sql = "Delete From Kunde Where Personnummer = '$personnummer'";
         $resultat = $this->db->query($sql);
