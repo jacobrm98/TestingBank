@@ -116,7 +116,7 @@ function hentAlleKunder()
         $konti1->type = "Brukskonto";
         $konti1->valuta = "NOK";
         
-        if($konti1->personnummer == $kunde->personnummer)
+        if($konti1->personnummer == $konto->personnummer)
         {
             return "OK";
         }
