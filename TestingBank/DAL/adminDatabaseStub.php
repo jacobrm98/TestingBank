@@ -103,7 +103,7 @@ function hentAlleKunder()
         $konti1->type = "Brukskonto";
         $konti1->valuta = "NOK";
         
-        if($konti1->personnummer == $kunde->personnummer)
+        if($konti1->personnummer == $konto->personnummer)
         {
             return "OK";
         }
@@ -142,33 +142,27 @@ function hentAlleKunder()
         $konti1->saldo = 2000;
         $konti1->type = "Brukskonto";
         $konti1->valuta = "NOK";
+        $allKonti[] = $konti1;
 
         $konti2 = new konto();
-        $konti2->personnummer = "01010122344";
+        $konti2->personnummer = "01010122355";
         $konti2->kontonummer = "23456543456";
         $konti2->saldo = 7000;
         $konti2->type = "Sparekonto";
         $konti2->valuta = "NOK";
+        $allKonti[] = $konti2;
 
-        if($personnummer == $konti1->personnummer)
-        {
-            $allKonti[] = $konti1;
-            $allKonti[] = $konti2;
-        }
+
+
+
         return $allKonti;
     }
     function slettKonto($kontonummer)
     {
-        $kunde1 = new kunde();
-        $kunde1->fornavn = "Ola";
-        $kunde1->etternavn = "Nordmann";
-        $kunde1->adresse = "Heiaveien 5";
-        $kunde1->postnr = "0477";
-        $kunde1->telefonnr = "12345678";
-        $kunde1->passord = "HeiHei";
-        $kunde1->personnummer = "12345678901";
+        $konto = new konto();
+        $konto->kontonummer = "0101010101";
         
-        if($kunde->kontonummer == $kontonummer)
+        if($konto->kontonummer == $kontonummer)
         {
             return "OK";
         }
