@@ -123,13 +123,13 @@ function hentAlleKunder()
         $konti1->type = "Brukskonto";
         $konti1->valuta = "NOK";
         
-        if($konti1->personnummer == $konto->personnummer)//Søker etter personnummeret til konto på adminDatabase.php
+        if($konti1->personnummer == $konto->personnummer && $konti1->kontonummer == $konto->kontonummer)
         {
             return "OK";
         }
         else
         {
-            return "Feil";
+            return "Feil i personnummer eller kontonummer";
         }
     }
 
@@ -151,10 +151,10 @@ function hentAlleKunder()
         $konti2->type = "Sparekonto";
         $konti2->valuta = "NOK";
 
-        if($personnummer == $konti1->personnummer)//I adminDatabase.php så henter den all info fra konto. Ikke bare kontonummer
+        if($personnummer == $konti1->personnummer)
         {
-            $allKonti[] = $konti1;//Stod $konti1->kontonummer
-            $allKonti[] = $konti2;//Stod $konti2->kontonummer
+            $allKonti[] = $konti1;
+            $allKonti[] = $konti2;
         }
         return $allKonti;
     }
@@ -175,9 +175,7 @@ function hentAlleKunder()
         }
         else
         {
-            return "Feil i personnummer";
-//Usikker om man har bruker "Feil" eller "Feil i personnummer". 
-//I adminDatabase.php så brukes det json_encode med "Feil i personnummer".
+            return "Feil i kontonummer";
         }
     }
 }  
