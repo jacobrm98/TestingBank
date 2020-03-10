@@ -4,21 +4,13 @@ include_once '../../DAL/adminDatabaseStub.php';
 include_once '../../BLL/adminLogikk.php';
 
 class registrerKundeTest extends PHPUnit\Framework\TestCase {
-//Usikker på om jeg må opprette hele kunden? Men det står "Select * from $kunde i adminDatabase"
-    public function testRiktigPostNr()
+
+    public function testRiktigPersonNr()
     {
         //arrange
         $adminLogikk = new Admin(new AdminDBStub());
         $kunde = new kunde();
-       /* $kunde->personnummer = "03048537488";
-        $kunde->fornavn = "Ola";
-        $kunde->etternavn = "Grønndal";
-        $kunde->adresse = "Rappergata 42";
-        $kunde->poststed = "Oslo";
-        $kunde->telefonnr = "38959299";
-        $kunde->passord = "123456"; */
-        $kunde->postnr = "0481";
-
+        $kunde->personnummer = "12345678901";
 
         //act
         $result = $adminLogikk->registrerKunde($kunde);
@@ -27,19 +19,12 @@ class registrerKundeTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("OK", $result);
 
     }
-    public function testFeilPostNr()
+    public function testFeilPersonNr()
     {
         //arrange
         $adminLogikk = new Admin(new AdminDBStub());
         $kunde = new kunde();
-       /* $kunde->personnummer = "03048537488";
-        $kunde->fornavn = "Ola";
-        $kunde->etternavn = "Grønndal";
-        $kunde->adresse = "Rappergata 42";
-        $kunde->poststed = "Oslo";
-        $kunde->telefonnr = "38959299";
-        $kunde->passord = "123456";*/
-        $kunde->postnr = "8104";
+        $kunde->personnummer = "01987654321";
 
         //act
         $result = $adminLogikk->registrerKunde($kunde);
@@ -48,20 +33,12 @@ class registrerKundeTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("Feil", $result);
 
     }
-    public function testIngenPostNr()
+    public function testIngenPersonNr()
     {
         //arrange
         $adminLogikk = new Admin(new AdminDBStub());
         $kunde = new kunde();
-       /* $kunde->personnummer = "03048537488";
-        $kunde->fornavn = "Ola";
-        $kunde->etternavn = "Grønndal";
-        $kunde->adresse = "Rappergata 42";
-        $kunde->postnr = "";
-        $kunde->poststed = "Oslo";
-        $kunde->telefonnr = "38959299";
-        $kunde->passord = "123456";*/
-        $kunde->postnr = "";
+        $kunde->personnummer = "";
 
         //act
         $result = $adminLogikk->registrerKunde($kunde);

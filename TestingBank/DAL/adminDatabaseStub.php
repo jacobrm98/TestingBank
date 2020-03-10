@@ -52,21 +52,9 @@ function hentAlleKunder()
         }
 
     }
-    /*function registrerKunde($kunde) Koden til Einar (shit kode)
-    {
-        if($kunde->postnr == "0481")
-        {
-            return "OK";
-        }
-        else
-        {
-            return "Feil";
-        }
 
-    }*/
     function registrerKunde($kunde)
-    
-//Usikker om man skal ha personnummeret, men Krattebøl har brukt ID-nummer på en lik funksjon på Enhetstesting
+
     {
         $kunde1 = new kunde();
         $kunde1->fornavn = "Ola";
