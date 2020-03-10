@@ -6,30 +6,29 @@ include_once '../../BLL/adminLogikk.php';
 class slettKundeTest extends PHPUnit\Framework\TestCase {
 public function test_slettKunde_OK()
      {
-   
+        // Arragnge
         $kunde1 = new kunde();
-        $kunde1->personnummer="12345678901";
-        
-        $adminLogikk= new Admin(new AdminDBStub());
+        $kunde1->personnummer = "12345678901";
+        $adminLogikk = new Admin(new AdminDBStub());
         
         // Act 
-        $OK=$adminLogikk->slettKunde($kunde1->personnummer);
+        $OK = $adminLogikk->slettKunde($kunde1->personnummer);
         
         // Assert
-        $this->assertEquals("OK",$OK );
+        $this->assertEquals("OK", $OK );
      }
      public function test_slettKunde_FeilPersonnummer()
      {
+         // Arrange
         $kunde1 = new kunde();
-        $kunde1->personnummer="12345678901";
-        
-        $adminLogikk= new Admin(new AdminDBStub());
+        $kunde1->personnummer = "12345678900";
+        $adminLogikk = new Admin(new AdminDBStub());
         
         // Act 
-        $feil=$adminLogikk->slettKunde($kunde1->personnummer);
+        $feil = $adminLogikk->slettKunde($kunde1->personnummer);
         
         // Assert
-        $this->assertEquals("Feil",$feil);
+        $this->assertEquals("Feil", $feil);
      }
      
 }

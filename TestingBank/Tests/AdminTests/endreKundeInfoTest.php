@@ -20,13 +20,13 @@ class endreKundeInfoTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("OK", $OK);
     }
 
-    public function test_endreKundeInfo_FeilPassord()
+    public function test_endreKundeInfo_FeilEtternavn()
     {
         // Arrange
         $adminLogikk = new Admin(new AdminDBStub());
         $kunde = new kunde();
-        $kunde->passord = "HeiHeiHei"; // Feil passord
-        $kunde->adresse = "Heiaveien 5";
+        $kunde->fornavn = "Ola";
+        $kunde->etternavn = "Vestmann";  // Feil etternavn
 
         // Act
         $feil = $adminLogikk->endreKundeInfo($kunde);
@@ -34,5 +34,4 @@ class endreKundeInfoTest extends PHPUnit\Framework\TestCase {
         // Assert
         $this->assertEquals("Feil", $feil);
     }
-
 }
