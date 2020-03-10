@@ -54,7 +54,6 @@ function hentAlleKunder()
     }
 
     function registrerKunde($kunde)
-
     {
         $kunde1 = new kunde();
         $kunde1->fornavn = "Ola";

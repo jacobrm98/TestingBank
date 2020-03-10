@@ -5,7 +5,7 @@ include_once '../../BLL/adminLogikk.php';
 
 class registrerKundeTest extends PHPUnit\Framework\TestCase {
 
-    public function testRiktigPersonNr()
+    public function testRiktigPersonNummer()
     {
         //arrange
         $adminLogikk = new Admin(new AdminDBStub());
@@ -19,7 +19,7 @@ class registrerKundeTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("OK", $result);
 
     }
-    public function testFeilPersonNr()
+    public function testFeilPersonNummer()
     {
         //arrange
         $adminLogikk = new Admin(new AdminDBStub());
@@ -33,7 +33,7 @@ class registrerKundeTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("Feil", $result);
 
     }
-    public function testIngenPersonNr()
+    public function testIngenPersonNummer()
     {
         //arrange
         $adminLogikk = new Admin(new AdminDBStub());
