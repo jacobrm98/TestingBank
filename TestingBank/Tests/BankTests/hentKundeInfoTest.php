@@ -8,7 +8,7 @@ class hentKundeInfoTest extends PHPUnit\Framework\TestCase
     public function test_HentKundeInfo()
     {
         // Arrange
-        $personnummer = "12345678901";
+        $personnummer = "12345678901"; // Riktig personnummer
         $bankLogikk = new Bank(new BankDBStub());
 
         // Act
