@@ -10,7 +10,7 @@ class endreKontoTestPHPtest extends TestCase
 
     public function test_endreKonto_RIKTIG(){
 
-        //arrange
+        //arrangee
         $adminLogikk = new Admin(new AdminDBStub());
 
         $konti1 = new konto();
